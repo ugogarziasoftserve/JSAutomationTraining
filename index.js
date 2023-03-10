@@ -1,80 +1,57 @@
-/**2. Write a script in an external file that will output your name to the console. Connect the created file to the HTML document.*/
-let name = "Hugo Alberto Garcia"
-console.log(name)
+/**1.- Add the code it is neccesary to use the variable x x and return the following  */
+let x = 1
+let y = 2
+let res1 = x.toString() + y.toString()
+console.log(res1)// String "12"
+console.log(typeof res1)// string
+let res2 = (y > x || x > y).toString() + y.toString()
+console.log(res2)// string "true2"
+console.log(typeof res2)// string
+let res3 = (y > x || x > y)
+console.log(res3)// true 
+console.log(typeof res3)// boolean
+let res4 = 1 / "a"
+console.log(res4) // Nan
+console.log(typeof res4) // number
+console.log("*******************************************************next exercise")
 
-/**3. 
- * a) announce two changes; 
- * b) write any values in the variable; 
- * c) enter the changed values on the screen; 
- * d) copy the value of one variable to another; 
- * e) enter the changed values on the screen. */
-alert("Enter two numbers")
-let valueA = prompt("Value A")
-let valueB = prompt("Value B")
-alert("Thanks, now the code will assign the number of B into A variable")
-valueA = valueB
-alert("New asignation on A=" + valueA)
+/** 2.- The user enters a number (use prompt ()) . It is necessary 
+ * to check whether the entered number is correct  */
 
-/**4. Create an object with the following 5 properties: 
- * “String”, “Number”, “Boolean”, “Undefined”, “Null”. 
- * The value of each property must correspond to the corresponding primitive data type. */
+let m = parseInt(prompt("Enter a number"))
+if (!isNaN(m)) {
+    console.log("The value is a number")
 
-myFirstObject = {
-    string: "Test of the object",
-    number: 234,
-    booleanType: true,
-    undefinedType: undefined,
-    nullType: null
+    if (Math.sign(m) == 1) {
+        console.log(m + " is positive")
+    } else {
+        console.log(m + " is negative")
+    }
+    if ((m % 7) == 0) {
+        console.log(m + "  is multiple of 7")
+    } else {
+        console.log(m + "  is not multiple of 7")
+    }
 }
-
-/**5. Using the confirm() function, ask the user a question 
- * about reaching the age of majority. 
- * Record the result in the isAdult variable and enter it in the console. */
-let adult = confirm("Do you have majority age in your country");
-console.log(adult)
-
-/**6. I have query about this task */
-
-/**7. Using the prompt() function, write a binding that 
- * the site asks for the user's account, email and password, 
- * and displays the entered data on the screen. For example, 
- * "Dear user, your email address is usermale@gmail.com, your password is qwerty. */
-let account = prompt("Hi , Please enter your user account")
-let email = prompt("Please enter your email")
-let password = prompt("Please enter your password ")
-alert("Dear user, your email is " + email + ", your password is " + password)
-
-/** 8. Write a binding that calculates the number of seconds in a year, a day, a month, 
- * records the results in the 
- * corresponding changes and displays 
- * their values on the screen.
- */
-alert("This program will calculate the number of seconds in the number of years, months and days you enter")
-let years = parseInt(prompt("Enter number of years"))
-let months = parseInt(prompt("Enter number of months"))
-let days = parseInt(prompt("Enter number of days"))
-let sumOfSeconds=0
-
-if (years == 0 || years == undefined || 'number' != typeof (years)) {
-    sumOfSeconds+=0    
-} else {
-    sumOfSeconds += years * 32140800
+else {
+    console.log("The value is not a  number")
 }
-if (months == 0 || months == undefined || 'number' != typeof (months)) {
-    sumOfSeconds+=0
-} else {
-    sumOfSeconds += months * 2678400
-}
-if (days == 0 || days == undefined || 'number' != typeof (days)) {
-    sumOfSeconds+=0
-} else {
-    sumOfSeconds += days * 3600
-}
-
-alert("Total seconds are " + sumOfSeconds)
+console.log("*******************************************************next exercise")
 
 
-
-
-
+/** 3. Create an array: */
+let arrayX = []
+// add number
+arrayX.push(2)
+// add a line
+arrayX.push("this is the second element of the array")
+// add boolean
+arrayX.push(true)
+// add null
+arrayX.push(null)
+console.log("Array lenght " + arrayX.length)
+arrayX.push(prompt("Enter the next value of the array"))
+console.log("the fifth value of the array is " + arrayX[4])
+arrayX.shift()
+console.log("remove the first element of the array and print it Array= '"+ arrayX +"'")
 
