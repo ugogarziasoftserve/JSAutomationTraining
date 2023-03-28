@@ -60,15 +60,15 @@ The function returns the name of the month according to the entered month number
 In case of incorrect input, an exception is thrown in the form of an object of the Month Exception 
 class with the message 'Incorrect month number'.  */
 class MonthName {
-    monthName=null
+    monthName = null
 
     constructor(monthNumber) {
         try {
-            console.log(monthNumber)
+
             this.monthNumber = monthNumber
             if (this.monthNumber > 12 || this.monthNumber == 0 || isNaN(monthNumber)) {
                 throw new Error("Incorrect month number")
-            } 
+            }
         }
         catch (exception) {
             return (exception.message)
@@ -76,8 +76,8 @@ class MonthName {
 
     }
 
-     showMonthName(month) {
-        console.log(month)
+    showMonthName(month) {
+
         switch (month) {
             case 1:
                 return "Juanary"
@@ -115,19 +115,22 @@ alert("The name of the month you enter is " + getNameMonth.showMonthName(monthUs
 /**4. Implement the showUser ( id ) function, 
  * which takes the user id as a parameter and returns an 
  * object that contains the value of the passed id . The function also throws an error if a negative id is entered  */
-let idList= new Object()
 
-let userInput=[]
 
-function showUser(){
-    for(let i=0;i<userInput.length;i++){
+let userInput = [{}]
 
-        try{
-            if ()
-
-        }catch(exception){
+function showUser(userID) {
+    for (let i = 0; i < userID.length; i++) {
+        if (Math.sign(userID[i]) == 1) {
+            userInput.push({ id: userID[i] })
+        } else {
+            console.log("Error: ID must not be negative" + userID[i])
 
         }
 
     }
 }
+
+showUser([2, 3, 4, -4])
+
+console.log(userInput)
