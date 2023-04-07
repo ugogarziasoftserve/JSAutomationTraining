@@ -27,3 +27,20 @@ function Employee(firstName, lastName, position) {
     }
 }
 let devPeterPeterson = new Employee("Peter", "Peterson", "dev")
+
+function Human(age, gender, nationality, name, lastName) {
+    this.age = age;
+    this.gender = gender;
+    this.nationality = nationality;
+    this.name = name;
+    this.lastName = lastName
+}
+
+
+/**
+ * 2. Create an arbitrary object that has 5 fields. It is necessary to write the showProps ( obj ) 
+ * function , which accepts this object and outputs a list of its 
+ * properties recorded in an array . Also enter an array of object property values
+ */
+
+const human= new Object()
