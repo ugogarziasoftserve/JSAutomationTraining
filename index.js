@@ -82,19 +82,17 @@ class Person {
 }
 
 class Student extends Person {
+  currentYear = new Date().getFullYear()
   constructor(name, surname, year, middlename) {
     super(name, surname)
     this.year = year
     this.middlename = middlename
-    this.showFullName = function () {
+    super.showFullName = function () {
       return this.name + " " + this.surname + " " + this.middlename
     }
-
-
   }
 
   showCourse() {
-    let currentYear = new Date().getFullYear()
     return currentYear - year
   }
 
