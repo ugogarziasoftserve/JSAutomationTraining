@@ -28,14 +28,6 @@ function Employee(firstName, lastName, position) {
 }
 let devPeterPeterson = new Employee("Peter", "Peterson", "dev")
 
-function Human(age, gender, nationality, name, lastName) {
-  this.age = age;
-  this.gender = gender;
-  this.nationality = nationality;
-  this.name = name;
-  this.lastName = lastName
-}
-
 
 /**
  * 2. Create an arbitrary object that has 5 fields. It is necessary to write the showProps ( obj ) 
@@ -82,7 +74,7 @@ class Person {
 }
 
 class Student extends Person {
-  currentYear = new Date().getFullYear()
+
   constructor(name, surname, year, middlename) {
     super(name, surname)
     this.year = year
@@ -93,11 +85,23 @@ class Student extends Person {
   }
 
   showCourse() {
-    return currentYear - year
+    if (new Date().getFullYear() - this.year > 6) {
+      return "The number of the year you enter exceed the number of the courses"
+    } else {
+      return "The current course  is " + (new Date().getFullYear() - this.year).toString()
+    }
   }
 
 }
 
-let student = new Student("Hugo", "Garcia", 2014, "De la P")
-console.log(student.showFullName)
-console.log(student.showCourse)
+let student = new Student("Hugo", "Garcia", 2017, "De la P")
+console.log(student.showFullName())
+console.log(student.showCourse())
+
+
+/**4.- Create a class Worker which will be have constructor , which accepts the following properties : 
+ * fullName ( name and last name ), dayRate ( rate by day works ), workingDays ( number worked out days ). */
+
+class Worker{
+
+}
