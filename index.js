@@ -102,6 +102,63 @@ console.log(student.showCourse())
 /**4.- Create a class Worker which will be have constructor , which accepts the following properties : 
  * fullName ( name and last name ), dayRate ( rate by day works ), workingDays ( number worked out days ). */
 
-class Worker{
+class Worker {
+  _experience = 1.2
 
+  constructor(fullName, dayRate, workingDays) {
+    this.fullName = fullName
+    this.dayRate = dayRate
+    this.workingDays = workingDays
+  }
+
+  //**The salary is the product of the dayRate, rate by the number of days worked workingDays .  */
+  showSalary() {
+    return this.dayRate * this.workingDays
+  }
+
+  showSalaryWithExperience() {
+    return this.dayRate * this.workingDays * this._experience
+  }
+
+  set experience(value) {
+    this._experience = value
+  }
+
+  get experience() {
+    return this._experience
+  }
 }
+
+let worker1 = new Worker("Tester1", 20, 50)
+console.log(worker1.fullName)
+worker1.showSalary()
+console.log("New experience: " + worker1.experience)
+worker1.experience = 1.5
+console.log("New experience: " + worker1.experience)
+console.log(worker1.showSalaryWithExperience())
+
+let worker2 = new Worker("Tester2", 80, 60)
+worker2.experience = 3.5
+
+let worker5 = new Worker("Tester3", 40, 60)
+worker5.experience = 1.4
+
+let worker3 = new Worker("Tester4", 50, 60)
+worker3.experience = 1.6
+
+let worker4 = new Worker("Tester5", 60, 60)
+worker4.experience = 1.8
+
+let listOfWorkers = []
+
+listOfWorkers.push(worker1, worker2, worker3, worker4, worker5)
+
+
+
+//console.log(listOfWorkers)
+
+
+let newList = listOfWorkers.sort((a, b) => {
+  return a.showSalary() - b.showSalary();
+});
+
