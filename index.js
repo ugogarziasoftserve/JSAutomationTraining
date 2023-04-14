@@ -162,3 +162,10 @@ let newList = listOfWorkers.sort((a, b) => {
   return a.showSalary() - b.showSalary();
 });
 
+
+
+newList.forEach(element =>
+  console.log(element.fullName + '\n' +
+    element.fullName + "salary: " + element.showSalary() + '\n' +
+    "New experience " + element.experience + '\n' +
+    element.fullName + "salary with experience : " + element.showSalaryWithExperience()))
